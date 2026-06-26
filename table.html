@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<!-- NOTES for reviewer:
+
+    -> No AI tools used, so this reflects my foundational skill level
+
+    -> Custom "LendingPad" font icons are in the "icons" folder, and implemented in the table
+
+    -> Block, Element, Modifier (BEM) notation is used wherever appropriate
+    
+    -> [!!! TBD] Edit records page design proposals:
+        1) A dynamic panel
+        2) A standalone page
+
+    -> Interactive elements (JavaScript in <script> tag at bottom):
+        - all "edit" buttons open the edit records panel
+        - edit record panel "exit", "cancel", and "save" buttons will close the panel
+        - the button for selecting the number of visible rows is clickable
+        - the "more" / "actions" menu button in each row is clickable
+        - all checkboxes are custom CSS with SVG aniatmion, and clickable
+
+    -> Dynamic table elements (inserted via JavaScript in the "script.js" file):
+        - customer balance amounts are dynamically set to red/green color style based on integer value
+        - status badges are set dynamically based on the "status" value in the customer data object
+    
+    -> Table icons are a custom SVG font
+        - see "icons" folder for source SVG icon files
+
+    -> [!!! TBD] Table responsiveness:
+        - shift + mouse wheel or click/tap and drag left/right below 720px
+
+-->
+
+<!-- HEAD -->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LendingPad Table</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+<!-- BODY -->
+
+    <body>
+
+        <!-- TABLE -->
+
+        <section class="tbl-section">
+
+            <header class="tbl-header">
+                <button class="tbl-header__filter-btn"><span class="icon-filter"></span></button>
+                <div class="tbl-header__search-container">
+                    <span class="icon-search"></span>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="tbl-header__primary-btn"><span class="icon-add"></span>Add User</button>
+            </header>
+
+            <div class="tbl-section__sub-container">
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="small-col">
+                                <!-- custom CSS checkbox with SVG animtaion -->
+                                <div class="checkbox-wrapper-4">
+                                    <input class="inp-cbx" id="morning" type="checkbox"/>
+                                    <label class="cbx" for="morning">
+                                        <span><svg width="12px" height="10px"><use xlink:href="#check-4"></use></svg></span>
+                                        <!-- <span></span> -->
+                                    </label>
+                                    <svg class="inline-svg">
+                                        <symbol id="check-4" viewbox="0 0 12 10">
+                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </symbol>
+                                    </svg>
+                                </div>
+                            </th>
+                            <th scope="col" class="small-col">#<span class="icon-sort"></span></th>
+                            <th scope="col" class="button-col"></th>
+                            <th scope="col" class="name-col">NAME<span class="icon-sort"></span></th>
+                            <th scope="col" class="desc-col">DESCRIPTION</th>
+                            <th scope="col" class="status-col">STATUS<span class="icon-sort"></span></th>
+                            <th scope="col" class="num-col">RATE</th>
+                            <th scope="col" class="num-col">BALANCE</th>
+                            <th scope="col" class="num-col">DEPOSIT</th>
+                            <th scope="col" class="small-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- table rows and data added dyanmically via JavaScript in script.js -->
+                    </tbody>
+                </table>
+
+                <menu class="action-menu" id="action-menu">
+                    <p>Invite Consumer<span class="icon-person"></span></p>
+                    <p>Send Email<span class="icon-email"></span></p>
+                    <p>Manage Cost Details<span class="icon-cost"></span></p>
+                </menu>
+
+            </div> <!-- end tbl-section__sub-container -->
+
+            <footer class="tbl-footer">
+                <!-- page numbers etc. would be handled dynamically in a real use case, but this just demonstrates UI -->
+                <p class="tbl-footer__page-count">1 - 10 of 97</p>
+                <div class="tbl-footer__rows-pages">
+                    <p>Rows per page:</p>
+                    <button class="row-num-selector" onclick="show_list()">
+                        10<span class="icon-down"></span>
+                        <div class="row-num-list" id="row-num-selector">
+                            <p>5</p>
+                            <p class="active-row-num">10</p>
+                            <p>15</p>
+                            <p>20</p>
+                            <p>30</p>
+                            <p>40</p>
+                            <p>50</p>
+                        </div>
+                    </button>
+                    <button class="btn-page-selector selector-disabled"><span class="icon-left"></span></button>
+                    <span class="active_page">1/10</span>
+                    <button class="btn-page-selector"><span class="icon-right"></span></button>
+                </div>
+            </footer>
+
+        </section>
+
+        <!-- EDIT RECORD PANEL -->
+
+        <!-- (in real use cases this data should be dynamically filled, but I'm just demonstrating UI here) -->
+        <section class="panel-container" id="panel-container">
+            <div class="panel-container__panel-header">
+                <h1>Alex Smith</h1>
+                <!-- <button class="btn-edit"><span class="icon-edit"></span></button> -->
+                <button class="exit-panel" id="exit-panel" onclick="hide_panel()">&#10006;</button>
+            </div>
+            <div class="panel-container__panel-body">
+                <div class="panel-body__panel-row">
+                    <label for="acct-field">Account number</label>
+                    <input type="text" id="acct-field" value="4372846375">
+                </div>
+                <div class="panel-body__panel-row">
+                    <label for="first-field">First name</label>
+                    <input type="text" id="first-field" value="Alex">
+                </div>
+                <div class="panel-body__panel-row">
+                    <label for="last-field">Last name</label>
+                    <input type="text" id="last-field" value="Smith">
+                </div>
+                <div class="panel-body__panel-row">
+                    <label>Status</label>
+                    <div class="status-menu">
+                        <span class="badge badge_open">Open</span>
+                        <span class="icon-down"></span>
+                    </div>
+                </div>
+                <div class="panel-body__panel-row">
+                    <label>Rate</label>
+                    <div class="status-menu">
+                        <div class="currency-menu">
+                            <img src="icons/CAD-flag.png">
+                            <p class="denom">CAD</p>
+                            <span class="icon-down"></span>
+                        </div>
+                        <input type="text" id="rate-amount" value="$70.00">
+                    </div>
+                </div>
+                <div class="panel-body__panel-row">
+                    <label>Balance</label>
+                    <div class="status-menu">
+                        <div class="currency-menu">
+                            <img src="icons/CAD-flag.png">
+                            <p class="denom">CAD</p>
+                            <span class="icon-down"></span>
+                        </div>
+                        <input type="text" id="balance-amount" value="-$270.00">
+                    </div>
+                </div>
+                <div class="panel-body__panel-row">
+                    <label>Deposit</label>
+                    <div class="status-menu">
+                        <div class="currency-menu">
+                            <img src="icons/CAD-flag.png">
+                            <p class="denom">CAD</p>
+                            <span class="icon-down"></span>
+                        </div>
+                        <input type="text" id="deposit-amount" value="$100.00">
+                    </div>
+                </div>
+                <div class="panel-body__panel-row">
+                    <label>Description</label>
+                    <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...</textarea>
+                </div>
+                <div class="panel-footer">
+                    <button class="cancel" onclick="hide_panel()">Cancel</button>
+                    <button class="tbl-header__primary-btn" onclick="hide_panel()"></span>Save</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCRIPTS -->
+
+        <!-- customer data & dynamic table row elements -->
+        <script src="js/script.js" async defer></script>
+        
+        <!-- basic interactions -->
+        <script>
+            // onClick() event listener for action menu
+            const onClick = (event) => {
+                var element = event.srcElement;
+                if (element.className == "icon-actions"){
+                    var values = element.getBoundingClientRect();
+                    show_actions(values.y.toFixed() + "px");
+                }
+                else{ // hide menu if you click off of it
+                    const menu = document.getElementById("action-menu");
+                    menu.style.display = "none";
+                };
+            }
+            window.addEventListener('click', onClick);
+
+            // open/close the the rows per page list
+            function show_list(){
+                const list = document.getElementById("row-num-selector");
+                if (list.style.display != "flex"){
+                    list.style.display = "flex";
+                }else{
+                    list.style.display = "none";
+                };
+            };
+            // show/hide actions menu
+            function show_actions(value){
+                const menu = document.getElementById("action-menu");
+                //clear any already open menus
+                menu.style.display = "none";
+                if (menu.style.display != "flex"){
+                    menu.style.top = value;
+                    menu.style.display = "flex";
+                }else{
+                    menu.style.display = "none";
+                };
+            };
+            // show/hide records panel
+            var panel_visible = false;
+            function show_panel(){
+                // prevent multiple transforms with if statement
+                // transform is more performant that setting position (?)
+                if (!panel_visible){
+                    const panel = document.getElementById("panel-container");
+                    panel.style.transform = "translateX(360px)";
+                    panel_visible = true;
+                };
+            };
+            function hide_panel(){
+                if (panel_visible){
+                    const panel = document.getElementById("panel-container");
+                    panel.style.transform = "translateX(-360px)";
+                    panel_visible = false;
+                };
+            };
+        </script>
+
+    </body>
+</html>

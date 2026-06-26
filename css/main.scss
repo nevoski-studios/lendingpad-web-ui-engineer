@@ -1,0 +1,652 @@
+// CUSTOM SVG FONT ==========================
+
+@font-face {
+  font-family: 'lendingpad';
+  src:  url('../fonts/lendingpad.eot?o2etsw');
+  src:  url('../fonts/lendingpad.eot?o2etsw#iefix') format('embedded-opentype'),
+    url('../fonts/lendingpad.ttf?o2etsw') format('truetype'),
+    url('../fonts/lendingpad.woff?o2etsw') format('woff'),
+    url('../fonts/lendingpad.svg?o2etsw#lendingpad') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'lendingpad' !important;
+//   speak: never;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-actions:before {
+  content: "\e900";
+  color: #687182;
+}
+.icon-add:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-box .path1:before {
+  content: "\e902";
+  color: rgb(255, 255, 255);
+}
+.icon-box .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(210, 212, 215);
+}
+.icon-cost:before {
+  content: "\e904";
+  color: #14804a;
+}
+.icon-down:before {
+  content: "\e905";
+  color: #868fa0;
+}
+.icon-edit:before {
+  content: "\e906";
+  color: #4b85fa;
+}
+.icon-email:before {
+  content: "\e907";
+  color: #3d70d2;
+}
+.icon-filter:before {
+  content: "\e908";
+  color: #464f60;
+}
+.icon-left:before {
+  content: "\e909";
+  color: #868fa0;
+}
+.icon-person:before {
+  content: "\e90a";
+  color: #3d70d2;
+}
+.icon-right:before {
+  content: "\e90b";
+  color: #868fa0;
+}
+.icon-search:before {
+  content: "\e90c";
+  color: #868fa0;
+}
+.icon-sort:before {
+  content: "\e90d";
+  color: #bcc2ce;
+}
+
+// GENERAL SCSS & STYLING ==========================
+
+// general colors
+$white : #fff;
+$header_color: #f4f8ff;
+$primary_button_color: #3D70D2;
+$row_background_color: #F9FAFC;
+$badge_open_color: #e4f1ff;
+$badge_paid_color: #e1fcef;
+$badge_inactive_color: #e9edf5;
+$badge_due_color: #faf0f3;
+// text colors
+$neutral_text_color: #464f60;
+$inactive_text_color: #5a6376;
+$small_text_color: #687182;
+$hint_text_color: #A1A9B8;
+$blue_text_color: #496ee9;
+$green_text_color: #14804A;
+$red_text_color: #E20038;
+// common styling
+$border_radius: 6px;
+$light_border_color: #f2f2f2;
+
+// mixins
+@mixin status($badge_color: $badge_open_color, $text_color: $blue_text_color){
+  background: $badge_color;
+  color: $text_color;
+}
+@mixin button_border_shadow(){
+  box-shadow: 0 1px 1px 0 #00000010, 0 0 0 1px #464F6025 ,0 2px 5px 0 #59607810;
+}
+@mixin field_border_shadow(){
+  box-shadow: 0 1px 2px 0 #00000006, 0 0 0 1px #68718216;
+}
+@mixin input_field_style(){
+  @include button_border_shadow();
+  background-color: white;
+  border-radius: $border_radius;
+  color: $neutral_text_color;
+  padding: 0 8px;
+  min-height: 32px;
+  width: 100%;
+}
+
+// global styling
+*{
+  border: none;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: #e5e5e5;
+  padding: 20px;
+}
+
+// CLASS STYLING ==========================
+
+// main table container
+.tbl-section{
+  border: 1px solid $light_border_color;
+  border-radius: 8px;
+  height: 740px;
+  margin: 0 auto;
+  max-width: 1020px;
+  min-width: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+// table header
+.tbl-header{
+  align-items: center;
+  background: $header_color;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  padding: 20px 16px;
+  width: 100%;
+}
+.tbl-header__filter-btn{
+  @include button_border_shadow();
+  background-color: $white;
+  border-radius: $border_radius;
+  height: 32px;
+  min-width: 40px;
+  width: 40px;
+}
+.tbl-header__search-container{
+  @include button_border_shadow();
+  background-color: $white;
+  border-radius: $border_radius;
+  display: flex;
+  height: 32px;
+  margin: 0 16px;
+  width: 320px;
+  span{
+      font-size: 14px;
+      margin: auto 0 auto 12px;
+  }
+  input{
+      background-color: transparent;
+      font-size: 14px;
+      height: 100%;
+      padding: 0 8px;
+      width: 100%;
+      vertical-align: middle;
+  }
+}
+.tbl-header__primary-btn{
+  background-color: #3D70D2;
+  border: none;
+  border-radius: $border_radius;
+  color: $white;
+  font-weight: 500;
+  height: 32px;
+  margin-left: auto;
+  min-width: 113px;
+  width: 113px;
+  span{
+      vertical-align: middle;
+      margin: 0 4px 0 -8px;
+  }
+}
+
+// table sub container
+.tbl-section__sub-container{
+  // border: 1px solid magenta; // testing
+  height: 100%;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+// table contents structure
+table{
+  border-collapse: collapse;
+  vertical-align: middle;
+  min-width: 720px;
+  width: 100%;
+  thead{
+      height: 40px;
+      tr{
+          border-bottom: 1px solid $light_border_color;
+          background-color: $header_color;
+          th{
+              color: $neutral_text_color;
+              font-size: 11px;
+              font-weight: 600;
+              margin: auto 0 0 0;
+              text-align: left;
+              span{vertical-align: middle;}
+          }
+      }
+      th:nth-child(1){text-align: center;}
+      th:nth-child(6){text-align: center;}
+  }
+  tbody{
+      position: relative;
+      tr{
+          height: 64px;
+          td.small-col{text-align: center;}
+          td:nth-child(6){text-align: center;}
+      }
+      tr:nth-child(odd){background: $white;}
+      tr:nth-child(even){background: $row_background_color;}
+  }
+}
+.small-col{width: 36px;}
+.button-col{width: 48px;}
+.name-col{
+  padding-left: 8px;
+  width: 160px;
+}
+.desc-col{width: 238px;}
+.status-col{width: 70px;}
+.num-col{
+  text-align: right;
+  width: 100px;
+}
+.name{font-weight: 500;}
+.acct_num, .denom {
+  color: $small_text_color;
+  font-size: 12px;
+}
+// (balance amount modifier classes)
+.negative{color: $red_text_color;}
+.positive{color: $green_text_color;}
+.num-row{text-align: right;}
+
+// more actions menu
+.action-menu{
+  align-items: left;
+  background: $white;
+  border: 1px solid $light_border_color;
+  border-radius: $border_radius;
+  display: none;
+  flex-direction: column;
+  filter: drop-shadow(0 5px 5px #00000025);
+  height: 102px;
+  padding: 8px 16px 0 16px;
+  position: absolute;
+  right: 16px;
+  width: 210px;
+  z-index: 10;
+  p:nth-child(1){color: $blue_text_color;}
+  p:nth-child(2){color: $blue_text_color;}
+  p:nth-child(3){color:$green_text_color;}
+  p{
+      margin: 4px 0;
+      span{
+          position: absolute;
+          right: 16px;
+          vertical-align: middle;
+      }
+  }
+}
+
+// table footer stuff
+.tbl-footer{
+  align-items: center;
+  background: #f4f8ff75;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid $light_border_color;
+  bottom: 0;
+  display: flex;
+  height: 44px;
+  padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  p{
+      color: $small_text_color;
+      font-size: 12px;
+  }
+}
+.tbl-footer__rows-pages{
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+.active_page{
+  color: $small_text_color;
+  font-size: 12px;
+  margin: 0 8px;
+}
+.row-num-selector{
+  background-color: transparent;
+  border-radius: 2px;
+  color: $small_text_color;
+  display: flex;
+  font-size: 12px;
+  height: 24px;
+  margin: 0 8px;
+  padding: 2px 4px;
+  position: relative;
+  text-align: center;
+  width: 32px;
+  span{
+      margin: -2px 0 0 10px;
+      position: absolute;
+  }
+}
+.row-num-selector:hover{
+  background-color: $light_border_color;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+}
+.row-num-list{
+  align-items: center;
+  background: $white;
+  border: 1px solid $light_border_color;
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  height: 204px;
+  margin: -208px 0 0 -10px;
+  position: absolute;
+  width: 48px;
+  z-index: 1;
+  p{
+      border-radius: 4px;
+      font-size: 14px;
+      margin: auto auto;
+      width: 80%;
+  }
+}
+.active-row-num{
+  background: $primary_button_color;
+  color: $white !important;
+  font-weight: 500 !important;
+}
+// footer button modifier class
+.selector-disabled{
+  background-color: transparent;
+  pointer-events: none;
+}
+
+// buttons & badges
+.btn-edit, .btn-page-selector{
+  @include button_border_shadow();
+  background-color: $white;
+  // border: 1px solid lightgray;
+  border-radius: $border_radius;
+  font-size: 16px;
+  height: 20px;
+  position: relative;
+  width: 25px;
+  span{
+      font-size: 24px;
+      margin: -12px 0 0 -12px;
+      position: absolute;
+  }
+}
+.btn-edit:hover{
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.icon-actions:hover{
+  background: $light_border_color;
+  border-radius: $border_radius;
+  cursor: pointer;
+}
+.badge{
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  margin: 0 auto;
+  padding: 1px 10px 1px 10px;
+}
+.badge_inactive{
+  @include status($badge_color: $badge_inactive_color, $text_color: $inactive_text_color)
+}
+.badge_open{
+  @include status($badge_color: $badge_open_color, $text_color: $blue_text_color);
+}
+.badge_paid{
+  @include status($badge_color: $badge_paid_color, $text_color: $green_text_color)
+}
+.badge_due{
+  @include status($badge_color: $badge_due_color, $text_color: $red_text_color)
+}
+
+// custom CSS & SVG animation checkbox
+.checkbox-wrapper-4 .cbx {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: inline-block;
+  width: 32px;
+}
+.checkbox-wrapper-4 .cbx:hover {
+  background: rgba(0,119,255,0.06);
+}
+.checkbox-wrapper-4 .cbx span {
+  float: left;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-4 .cbx span:first-child {
+  margin-left: 2px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  transform: scale(1);
+  border: 1px solid #cccfdb;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 1px rgba(0,16,75,0.05);
+}
+.checkbox-wrapper-4 .cbx span:first-child svg {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-4 .cbx span:last-child {
+  padding-left: 8px;
+  line-height: 18px;
+}
+.checkbox-wrapper-4 .cbx:hover span:first-child {
+  border-color: #07f;
+}
+.checkbox-wrapper-4 .inp-cbx {
+  position: absolute;
+  visibility: hidden;
+}
+.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
+  background: #07f;
+  border-color: #07f;
+  animation: wave-4 0.4s ease;
+}
+.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.checkbox-wrapper-4 .inline-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+// @media screen and (max-width: 640px) {
+//   .checkbox-wrapper-4 .cbx {
+//     width: 100%;
+//     display: inline-block;
+//   }
+// }
+@-moz-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@-webkit-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@-o-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+//  EDIT RECORDS PANEL ==========================
+
+.panel-container{
+  background-color: $white;
+  box-shadow: 0 0 15px #454B5725;
+  height: 100%;
+  left: -360px;
+  // left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+  width: 360px;
+  z-index: 1;
+  h1{
+    font-size: 20px;
+    font-weight: 400;
+    width: 100%;
+  }
+  label{color: $neutral_text_color;}
+  textarea{
+    @include button_border_shadow();
+    border-radius: $border_radius;
+    max-height: 200px;
+    max-width: 320px;
+    min-height: 100px;
+    min-width: 100%;
+    padding: 8px;
+    width: 100%;
+  }
+}
+.panel-container__panel-header{
+  // border-bottom: 1px solid lightgray;
+  display: flex;
+  column-gap: 8px;
+  padding: 16px 16px 0 16px;
+  height: 56px;
+  width: 100%;
+  z-index: 2;
+  button{
+    @include button_border_shadow();
+    background-color: $white;
+    border-radius: $border_radius;
+    color: $neutral_text_color;
+    height: 24px;
+    min-width: 24px;
+    width: 24px;
+  }
+  button:hover{
+    background: #f2f2f2;
+    cursor: pointer;
+  }
+}
+.panel-container__panel-body{
+  // border: 1px solid blue;
+  display: flex;
+  row-gap: 16px;
+  flex-direction: column;
+  height: calc(100% - 56px);
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  #first-field, #last-field, #acct-field{
+    @include input_field_style();
+  }
+}
+.panel-body__panel-row{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+.status-menu{
+  @include button_border_shadow();
+  border-radius: $border_radius;
+  display: flex;
+  min-height: 32px;
+  padding-left: 8px;
+  .badge{margin: auto 0;}
+  .icon-down{margin: auto 8px auto auto;}
+  input{
+    background-color: transparent;
+    padding-left: 8px;
+    width: 100%;
+  }
+}
+.currency-menu{
+  align-items: center;
+  border-right: 1px solid lightgray;
+  display: flex;
+  height: 100%;
+  width: 100px;
+  img{
+    height: 16px;
+    width: 32px;
+  }
+  p{margin-left: 8px;}
+}
+.panel-footer{
+  background: $white;
+  border-top: 1px solid lightgray;
+  bottom: 0px;
+  box-shadow: 0 0 15px #454B5725;
+  display: flex;
+  height: 56px;
+  left: 0;
+  padding: 12px 16px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  .cancel{
+    background-color: transparent;
+    color: $primary_button_color;
+  }
+  .cancel:hover{
+    color: rgb(12, 56, 114);
+    cursor: pointer;
+  }
+}
+
+  //  RESPONSIVENESS STUFF =========================
