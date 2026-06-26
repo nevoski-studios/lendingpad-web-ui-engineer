@@ -112,9 +112,6 @@ $light_border_color: #f2f2f2;
 @mixin button_border_shadow(){
   box-shadow: 0 1px 1px 0 #00000010, 0 0 0 1px #464F6025 ,0 2px 5px 0 #59607810;
 }
-@mixin field_border_shadow(){
-  box-shadow: 0 1px 2px 0 #00000006, 0 0 0 1px #68718216;
-}
 @mixin input_field_style(){
   @include button_border_shadow();
   background-color: white;
@@ -221,8 +218,8 @@ body{
 // table contents structure
 table{
   border-collapse: collapse;
-  vertical-align: middle;
   min-width: 720px;
+  vertical-align: middle;
   width: 100%;
   thead{
       height: 40px;
