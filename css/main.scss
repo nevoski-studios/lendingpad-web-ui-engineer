@@ -87,6 +87,7 @@
 $white : #fff;
 $header_color: #f4f8ff;
 $primary_button_color: #3D70D2;
+$primary_button_hover: #3059a7;
 $row_background_color: #F9FAFC;
 $badge_open_color: #e4f1ff;
 $badge_paid_color: #e1fcef;
@@ -111,6 +112,9 @@ $light_border_color: #f2f2f2;
 }
 @mixin button_border_shadow(){
   box-shadow: 0 1px 1px 0 #00000010, 0 0 0 1px #464F6025 ,0 2px 5px 0 #59607810;
+}
+@mixin menu_shadow(){
+  box-shadow: 0 0 0 1px #98A1B215, 0 15px 35px -5px #11182620, 0 5px 15px 0 #00000008;
 }
 @mixin input_field_style(){
   @include button_border_shadow();
@@ -141,12 +145,12 @@ body{
 
 // main table container
 .tbl-section{
-  border: 1px solid $light_border_color;
+  // @include button_border_shadow();
   border-radius: 8px;
   height: 740px;
   margin: 0 auto;
   max-width: 1020px;
-  min-width: 360px;
+  min-width: 320px;
   overflow: hidden;
   position: relative;
 }
@@ -192,10 +196,11 @@ body{
   }
 }
 .tbl-header__primary-btn{
-  background-color: #3D70D2;
+  background-color: $primary_button_color;
   border: none;
   border-radius: $border_radius;
   color: $white;
+  cursor: pointer;
   font-weight: 500;
   height: 32px;
   margin-left: auto;
@@ -206,12 +211,15 @@ body{
       margin: 0 4px 0 -8px;
   }
 }
+.tbl-header__primary-btn:hover{background-color: $primary_button_hover;}
 
 // table sub container
 .tbl-section__sub-container{
-  // border: 1px solid magenta; // testing
+  background: $white;
   height: 100%;
   overflow-x: scroll;
+  scrollbar-width: none;
+  padding-bottom: 96px;
   width: 100%;
 }
 
@@ -273,13 +281,12 @@ table{
 
 // more actions menu
 .action-menu{
+  @include menu_shadow();
   align-items: left;
   background: $white;
-  border: 1px solid $light_border_color;
   border-radius: $border_radius;
   display: none;
   flex-direction: column;
-  filter: drop-shadow(0 5px 5px #00000025);
   height: 102px;
   padding: 8px 16px 0 16px;
   position: absolute;
@@ -353,9 +360,9 @@ table{
   font-weight: 500;
 }
 .row-num-list{
+  @include menu_shadow();
   align-items: center;
   background: $white;
-  border: 1px solid $light_border_color;
   border-radius: 4px;
   display: none;
   flex-direction: column;
@@ -386,7 +393,6 @@ table{
 .btn-edit, .btn-page-selector{
   @include button_border_shadow();
   background-color: $white;
-  // border: 1px solid lightgray;
   border-radius: $border_radius;
   font-size: 16px;
   height: 20px;
@@ -499,12 +505,6 @@ table{
   pointer-events: none;
   user-select: none;
 }
-// @media screen and (max-width: 640px) {
-//   .checkbox-wrapper-4 .cbx {
-//     width: 100%;
-//     display: inline-block;
-//   }
-// }
 @-moz-keyframes wave-4 {
   50% {
     transform: scale(0.9);
@@ -533,7 +533,6 @@ table{
   box-shadow: 0 0 15px #454B5725;
   height: 100%;
   left: -360px;
-  // left: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -559,7 +558,9 @@ table{
   }
 }
 .panel-container__panel-header{
-  // border-bottom: 1px solid lightgray;
+  background: $header_color;
+  border-bottom: 1px solid rgba(153, 167, 196, 0.25);
+  box-shadow: 0 0 10px #454B5710;
   display: flex;
   column-gap: 8px;
   padding: 16px 16px 0 16px;
@@ -581,13 +582,14 @@ table{
   }
 }
 .panel-container__panel-body{
-  // border: 1px solid blue;
   display: flex;
   row-gap: 16px;
   flex-direction: column;
   height: calc(100% - 56px);
   padding: 16px;
+  overflow-y: scroll;
   position: relative;
+  scrollbar-width: none;
   width: 100%;
   #first-field, #last-field, #acct-field{
     @include input_field_style();
@@ -646,4 +648,41 @@ table{
   }
 }
 
-  //  RESPONSIVENESS STUFF =========================
+//  RESPONSIVENESS STUFF =========================
+
+@media screen and (max-width: 720px){
+  .tbl-section{
+    // height: calc(100vh - 48px);
+    width: 100%;
+  }
+  .tbl-section__sub-container{
+    padding-bottom: 148px;
+    scrollbar-width: none;
+  }
+  .tbl-header__search-container{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px){
+  .tbl-header{
+    display: inline-block;
+    height: 114px;
+    padding: 16px;
+    .tbl-header__filter-btn{
+      float: left;
+      margin-right: 16px;
+    }
+    .tbl-header__search-container{
+      margin: 0;
+      width: calc(100% - 56px);
+    }
+    .tbl-header__primary-btn{
+      float: left;
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+  .panel-container{
+    // width: 100%;
+  }
+}

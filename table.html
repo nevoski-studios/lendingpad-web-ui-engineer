@@ -9,9 +9,9 @@
 
     -> Block, Element, Modifier (BEM) notation is used wherever appropriate
     
-    -> [!!! TBD] Edit records page design proposals:
-        1) A dynamic panel
-        2) A standalone page
+    -> Edit records design proposal:
+        - (see Figma file for design components)
+        - click the "edit" button in any table row to open the dynamic panel
 
     -> Interactive elements (JavaScript in <script> tag at bottom):
         - all "edit" buttons open the edit records panel
@@ -116,7 +116,7 @@
                     <p>Rows per page:</p>
                     <button class="row-num-selector" onclick="show_list()">
                         10<span class="icon-down"></span>
-                        <div class="row-num-list" id="row-num-selector">
+                        <menu class="row-num-list" id="row-num-selector">
                             <p>5</p>
                             <p class="active-row-num">10</p>
                             <p>15</p>
@@ -124,7 +124,7 @@
                             <p>30</p>
                             <p>40</p>
                             <p>50</p>
-                        </div>
+                        </menu>
                     </button>
                     <button class="btn-page-selector selector-disabled"><span class="icon-left"></span></button>
                     <span class="active_page">1/10</span>
@@ -200,10 +200,10 @@
                     <label>Description</label>
                     <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...</textarea>
                 </div>
-                <div class="panel-footer">
-                    <button class="cancel" onclick="hide_panel()">Cancel</button>
-                    <button class="tbl-header__primary-btn" onclick="hide_panel()"></span>Save</button>
-                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="cancel" onclick="hide_panel()">Cancel</button>
+                <button class="tbl-header__primary-btn" onclick="hide_panel()"></span>Save</button>
             </div>
         </section>
 
