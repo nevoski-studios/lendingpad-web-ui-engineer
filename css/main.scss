@@ -549,6 +549,7 @@ table{
 }
 .description-area{
     @include button_border_shadow();
+    border: 1px solid $light_border_color;
     border-radius: $border_radius;
     max-height: 200px;
     max-width: 320px;

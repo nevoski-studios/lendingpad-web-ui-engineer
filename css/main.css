@@ -567,6 +567,7 @@ table tbody tr:nth-child(even) {
 
 .description-area {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.062745098), 0 0 0 1px rgba(70, 79, 96, 0.1450980392), 0 2px 5px 0 rgba(89, 96, 120, 0.062745098);
+  border: 1px solid #f2f2f2;
   border-radius: 6px;
   max-height: 200px;
   max-width: 320px;
