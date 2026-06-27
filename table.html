@@ -1,17 +1,23 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <!-- NOTES for reviewer:
 
     -> No AI tools used, so this reflects my foundational skill level
 
-    -> Custom "LendingPad" font icons are in the "icons" folder, and implemented in the table
+    -> Custom LendingPad SVG font
+        - see "icons" folder for source SVG icon files
 
     -> Block, Element, Modifier (BEM) notation is used wherever appropriate
     
     -> Edit records design proposal:
         - (see Figma file for design components)
         - click the "edit" button in any table row to open the dynamic panel
+        - check standalone edit records page
 
     -> Interactive elements (JavaScript in <script> tag at bottom):
         - all "edit" buttons open the edit records panel
@@ -23,12 +29,11 @@
     -> Dynamic table elements (inserted via JavaScript in the "script.js" file):
         - customer balance amounts are dynamically set to red/green color style based on integer value
         - status badges are set dynamically based on the "status" value in the customer data object
-    
-    -> Table icons are a custom SVG font
-        - see "icons" folder for source SVG icon files
 
-    -> [!!! TBD] Table responsiveness:
-        - shift + mouse wheel or click/tap and drag left/right below 720px
+    -> Table responsiveness:
+        - table header buttons reposition dynamically at speficied breakpoints
+        - table content scrolls along x/y axis as needed
+        - edit records side panel scrolls along y axis
 
 -->
 

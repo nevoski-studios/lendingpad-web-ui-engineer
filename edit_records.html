@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Edit Records</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <!-- Edit records standalone modal / page -->
+
+         <section class="record-container">
+
+            <header>
+                <h1>Alex Smith</h1>
+                <button class="exit-panel" id="exit-panel" onclick="hide_panel()">&#10006;</button>
+            </header>
+
+            <div class="record-content">
+                <div class="record-content__row">
+                    <div class="record-content__row__row-item">
+                        <label for="first-field">First name</label>
+                        <input type="text" id="first-field" value="Alex">
+                    </div>
+                    <div class="record-content__row__row-item">
+                        <label for="first-field">Last name</label>
+                        <input type="text" id="first-field" value="Smith">
+                    </div>
+                </div>
+                <div class="record-content__row">
+                    <div class="record-content__row__row-item">
+                        <label for="acct-field">Account number</label>
+                        <input type="text" id="acct-field" value="4372846375">
+                    </div>
+                    <div class="record-content__row__row-item">
+                        <label>Status</label>
+                        <div class="status-menu">
+                            <span class="badge badge_open">Open</span>
+                            <span class="icon-down"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="record-content__row">
+                    <div class="record-content__row__row-item">
+                        <label>Rate</label>
+                        <div class="status-menu">
+                            <div class="currency-menu">
+                                <img src="icons/CAD-flag.png">
+                                <p class="denom">CAD</p>
+                                <span class="icon-down"></span>
+                            </div>
+                            <input type="text" id="rate-amount" value="$70.00">
+                        </div>
+                    </div>
+                    <div class="record-content__row__row-item">
+                        <label>Balance</label>
+                        <div class="status-menu">
+                            <div class="currency-menu">
+                                <img src="icons/CAD-flag.png">
+                                <p class="denom">CAD</p>
+                                <span class="icon-down"></span>
+                            </div>
+                            <input type="text" id="balance-amount" value="-$270.00">
+                        </div>
+                    </div>
+                    <div class="record-content__row__row-item row-item--large">
+                        <label>Deposit</label>
+                        <div class="status-menu">
+                            <div class="currency-menu">
+                                <img src="icons/CAD-flag.png">
+                                <p class="denom">CAD</p>
+                                <span class="icon-down"></span>
+                            </div>
+                            <input type="text" id="deposit-amount" value="$100.00">
+                        </div>
+                    </div>
+                </div>
+                <div class="record-content__row">
+                    <label>Description</label>
+                    <textarea class="description-area">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...</textarea>
+                </div>
+            </div>
+
+            <footer>
+                <button class="cancel">Cancel</button>
+                <button class="tbl-header__primary-btn"></span>Save</button>
+            </footer>
+
+         </section>
+
+    </body>
+</html>
