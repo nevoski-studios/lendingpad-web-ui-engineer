@@ -104,7 +104,12 @@ body {
   padding: 20px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .tbl-section {
+  background: #fff;
   border-radius: 8px;
   height: 740px;
   margin: 0 auto;
@@ -157,11 +162,11 @@ body {
 }
 
 .tbl-header__primary-btn {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.062745098), 0 0 0 1px rgba(70, 79, 96, 0.1450980392), 0 2px 5px 0 rgba(89, 96, 120, 0.062745098);
   background-color: #3D70D2;
   border: none;
   border-radius: 6px;
   color: #fff;
-  cursor: pointer;
   font-weight: 500;
   height: 32px;
   margin-left: auto;
@@ -172,13 +177,11 @@ body {
   vertical-align: middle;
   margin: 0 4px 0 -8px;
 }
-
 .tbl-header__primary-btn:hover {
   background-color: #3059a7;
 }
 
 .tbl-section__sub-container {
-  background: #fff;
   height: 100%;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -361,7 +364,6 @@ table tbody tr:nth-child(even) {
   margin: -2px 0 0 10px;
   position: absolute;
 }
-
 .row-num-selector:hover {
   background-color: #f2f2f2;
   color: black;
@@ -396,8 +398,8 @@ table tbody tr:nth-child(even) {
 }
 
 .selector-disabled {
-  background-color: transparent;
-  pointer-events: none;
+  background-color: transparent !important;
+  pointer-events: none !important;
 }
 
 .btn-edit, .btn-page-selector {
@@ -417,7 +419,6 @@ table tbody tr:nth-child(even) {
 
 .btn-edit:hover {
   background: #f2f2f2;
-  cursor: pointer;
 }
 
 .icon-actions:hover {
@@ -600,7 +601,6 @@ table tbody tr:nth-child(even) {
 }
 .panel-container__panel-header button:hover {
   background: #f2f2f2;
-  cursor: pointer;
 }
 
 .panel-container__panel-body {
@@ -723,7 +723,6 @@ table tbody tr:nth-child(even) {
 }
 .record-container header button:hover {
   background: #f2f2f2;
-  cursor: pointer;
 }
 .record-container footer {
   align-items: center;
@@ -754,6 +753,10 @@ table tbody tr:nth-child(even) {
   flex-wrap: wrap;
   padding: 8px 0;
   width: 100%;
+}
+
+.record-content__row:nth-child(4) {
+  padding: 0 8px;
 }
 
 .record-content__row__row-item {
