@@ -5,7 +5,7 @@
 - Tested in *Chrome 149.0*, *Firefox 152.0*, and *Edge 149.0*
 - See [notes for reviewer](#notes) below for more details
 
-## Table with side panel, and edit record page previews
+## Animated previews
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 ## Notes for reviewer
