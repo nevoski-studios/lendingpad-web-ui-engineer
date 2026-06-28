@@ -12,7 +12,7 @@
 - Table data is dynamically added
 - The table, side panel, and edit records page are all responsive
 
-[Example table .gifs below &#128899;](#examples)
+[Example .gifs below &#128899;](#examples)
 
 ### 1) No AI tools used
 I intended this to be reflective of my foundational skill level, and while I'm not opposed to them when they're helpful, I didn't use Claude etc. for any part of this assessment.
