@@ -6,9 +6,8 @@
 
 [Notes for reviewer &#9662;](#notes)
 
-## Table & side panel page preview
+## Table & side panel, and edit records page previews
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
-## Edit records page preview
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 ## Notes for reviewer
 <a name="notes"></a>
