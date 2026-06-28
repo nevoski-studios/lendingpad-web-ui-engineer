@@ -13,8 +13,10 @@
 - The table, side panel, and edit records page are all responsive
 
 **Preview .gif images**
+---
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
+---
 
 ### 1) No AI tools used
 I intended this to be reflective of my foundational skill level, and while I'm not opposed to them when they're helpful, I didn't use Claude etc. for any part of this assessment.
