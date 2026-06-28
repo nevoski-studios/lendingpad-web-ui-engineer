@@ -5,7 +5,7 @@
 
 [Notes for reviewer &#9662;](#notes)
 
-## Preview .gif images
+## Preview .gifs
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 ## Notes for reviewer
