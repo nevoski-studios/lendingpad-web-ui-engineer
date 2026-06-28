@@ -3,10 +3,8 @@
 - Download and extract the code `.zip` file, and open the `table.html` and `edit_records.html` files to view each part of the assessment.
 - I included the **Figma** file containing my design proposals too: open the `table_and_records_design.fig` file in **Figma** to view.
 ## Preview .gif images
----
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
-
 ## Notes for reviewer
 **TL:DR:** 
 - I didn't use AI
