@@ -13,7 +13,7 @@
 - The table, side panel, and edit records page are all responsive
 
 **Animated overview: table with side panel, and edit records page**
-
+<image src="https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif" width:300px;>
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 
