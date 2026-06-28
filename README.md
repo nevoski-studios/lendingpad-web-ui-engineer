@@ -42,9 +42,9 @@ I included two design proposals for editing records:
 ### 8) Animated examples
 <a name="examples"></a>
 **Table**
-![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
+- ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 **Edit records page**
-![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
+- ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 
 
 
