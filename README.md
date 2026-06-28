@@ -3,7 +3,14 @@
 - Download and extract the code `.zip` file, and open the `table.html` and `edit_records.html` files to view each part of the assessment.
 - I included the **Figma** file containing my design proposals too: open the `table_and_records_design.fig` file in **Figma** to view.
 ## Notes for reviewer
-**TL:DR:** I didn't use AI, there's two options for the edit records page, I created a custom SVG font, used BEM, the table and side panel are interactive, table data is dynamically added, and the table, side panel, and edit records page are all responsive.
+**TL:DR:** 
+- I didn't use AI
+- There's two options for the edit records page
+- I created a custom SVG font
+- Used BEM
+- The table and side panel are interactive
+- Table data is dynamically added
+- The table, side panel, and edit records page are all responsive
 
 [Example table .gifs below &#128899;](#examples)
 
