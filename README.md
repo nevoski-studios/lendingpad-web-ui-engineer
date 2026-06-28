@@ -5,14 +5,17 @@
 ## Notes for reviewer
 **TL:DR:** 
 - I didn't use AI
-- There's two options for the edit records page
+- There's two options for the edit records page: dynamic side panel, and standalone page
 - I created a custom SVG font
 - Used BEM
 - The table and side panel are interactive
 - Table data is dynamically added
 - The table, side panel, and edit records page are all responsive
 
-[Example animated .gifs below &#128899;](#examples)
+**Table and edit records page**
+
+![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
+![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 
 ### 1) No AI tools used
 I intended this to be reflective of my foundational skill level, and while I'm not opposed to them when they're helpful, I didn't use Claude etc. for any part of this assessment.
@@ -39,12 +42,6 @@ I included two design proposals for editing records:
 - Table header buttons reposition dynamically at speficied breakpoints
 - Table content scrolls along x/y axis as needed
 - The edit records side panel scrolls along y axis
-### 8) Animated examples
-<a name="examples"></a>
-**Table and edit records page**
-
-![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
-![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 
 
 
