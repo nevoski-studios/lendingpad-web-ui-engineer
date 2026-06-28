@@ -19,8 +19,8 @@
 
 ### 1) No AI tools used
 I intended this to be reflective of my foundational skill level, and while I'm not opposed to them when they're helpful, I didn't use Claude etc. for any part of this assessment.
-### 2) Edit record page (and panel)
-I included two design proposals for editing records:
+### 2) Edit record page and dynamic side panel
+I included two design proposals for editing records (check included **Figma** file for components):
 - A dynamic side panel that opens when you click the "edit" button in table rows
 - A standalone page: `edit_records.html`
 ### 3) Custom LendingPad SVG font
