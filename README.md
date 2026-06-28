@@ -32,8 +32,9 @@ I included two design proposals for editing records:
 - Table header buttons reposition dynamically at speficied breakpoints
 - Table content scrolls along x/y axis as needed
 - The edit records side panel scrolls along y axis
-
+### 8) Animated examples
 <a name="examples"></a>
+
 
 
 
