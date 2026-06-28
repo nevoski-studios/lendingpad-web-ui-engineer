@@ -2,6 +2,7 @@
 ## Instructions
 - Download and extract the code `.zip` file, and open the `table.html` and `edit_records.html` files to view each part of the assessment.
 - I included the **Figma** file containing my design proposals too: open the `table_and_records_design.fig` file in **Figma** to view.
+- *Tested in Chrome 149.0, Firefox 152.0, and Edge 149.0*
 
 [Notes for reviewer &#9662;](#notes)
 
