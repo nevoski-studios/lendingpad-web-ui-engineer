@@ -41,12 +41,9 @@ I included two design proposals for editing records:
 - The edit records side panel scrolls along y axis
 ### 8) Animated examples
 <a name="examples"></a>
-**Table**
+**Table and edit records page**
 
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
-
-**Edit records page**
-
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
 
 
