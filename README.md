@@ -5,11 +5,11 @@
 ## Notes for reviewer
 **TL:DR:** 
 - I didn't use AI
-- There's two options for the edit records page: dynamic side panel, and standalone page
+- There's two options for the edit records page: a dynamic side panel, and standalone page
 - I created a custom SVG font
-- Used BEM
+- I used BEM
 - The table and side panel are interactive
-- Table data is dynamically added
+- Table row data is dynamically added via JavaScript
 - The table, side panel, and edit records page are all responsive
 
 **Table and edit records page**
