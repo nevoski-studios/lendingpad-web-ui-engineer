@@ -12,7 +12,7 @@
 - Table row data is dynamically added via JavaScript
 - The table, side panel, and edit records page are all responsive
 
-**Table and edit records page**
+**Table & side panel, and the edit records page:**
 
 ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
 ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
