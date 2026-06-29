@@ -10,8 +10,8 @@
 | --- | --- |
 | ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif) | ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif) |
 
-## Notes for reviewer
 <a name="notes"></a>
+## Notes for reviewer
 **TL:DR:** 
 - I didn't use AI
 - There's two options for the edit records page: a dynamic side panel, and standalone page
