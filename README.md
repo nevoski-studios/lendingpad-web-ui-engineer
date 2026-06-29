@@ -1,4 +1,5 @@
 # LendingPad Web UI Engineer Assessment
+Hello! I recently completed my interview with Lauren, so here is my assessment, along with some notes.
 ## Instructions
 - Download and extract the code `.zip` file, and open the `table.html` and `edit_records.html` files to view each part of the assessment.
 - I included the **Figma** file containing my design proposals too: open the `table_and_records_design.fig` file in **Figma** to view.
