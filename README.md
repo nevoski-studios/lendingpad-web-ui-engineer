@@ -3,11 +3,13 @@
 - Download and extract the code `.zip` file, and open the `table.html` and `edit_records.html` files to view each part of the assessment.
 - I included the **Figma** file containing my design proposals too: open the `table_and_records_design.fig` file in **Figma** to view.
 - Tested in *Chrome 149.0*, *Firefox 152.0*, and *Edge 149.0*
-- See [notes for reviewer](#notes) below for more details
+- See [notes for reviewer](#notes) and animated *.gif* previews below for more details
 
-## Preview .gifs: table with side panel, and edit records page
-![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif)
-![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif)
+## Preview .gifs
+| *Table with side panel* | *Edit records page* |
+| --- | --- |
+| ![Table](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/table_example.gif) | ![Edit records page](https://github.com/nevoski-studios/lendingpad-web-ui-engineer/blob/main/images/edit_records_example.gif) |
+
 ## Notes for reviewer
 <a name="notes"></a>
 **TL:DR:** 
